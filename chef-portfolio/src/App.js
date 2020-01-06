@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
   const [user, setUser] = useState({ email: "", password: ""});
 
   const handleChange = event => {
@@ -24,6 +22,7 @@ function App() {
           <input 
             type="text" 
             name="email"
+            value={user.email}
             onChange={event => handleChange(event)}
           />
         </label>
@@ -33,6 +32,7 @@ function App() {
           <input 
             type="text" 
             name="password"
+            value={user.password}
             onChange={event => handleChange(event)}
           />
         </label>
