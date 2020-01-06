@@ -2,32 +2,43 @@ import React, { useState } from "react";
 import "./App.css";
 
 function App() {
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  const [user, setUser] = useState({ email: "", password: ""});
 
   const handleChange = event => {
-    setEmail(event.target.value);
+    setUser({ ...user, [event.target.name]: event.target.value });
   };
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    console.log(user.email);
+    console.log(user.password);
+  }
 
   return (
     <div className="App">
-
-      <form>
+      <form onSubmit={event => handleSubmit(event)}>
         <label>
           Email:
           <input 
             type="text" 
+            name="email"
             onChange={event => handleChange(event)}
           />
         </label>
-      </form>
 
-      <form>
         <label>
           Password:
-          <input type="text"/>
+          <input 
+            type="text" 
+            name="password"
+            onChange={event => handleChange(event)}
+          />
         </label>
-      </form>
 
+        <button>Submit</button>
+      </form>
     </div>
   );
 }
