@@ -22,13 +22,16 @@ const Register = props => {
     e.preventDefault();
     setData({ ...data, isFetching: true });
     axios
-      .post("https://chefposts.herokuapp.com/api/chefs/register")
+      .post("https://chefposts.herokuapp.com/api/chefs/register", data)
       .then(res => {
         setData("response", res.data);
         props.history.push("/");
       })
       .catch(err =>
-        console.log("sorry, an error has occured while registering your information", err)
+        console.log(
+          "sorry, an error has occured while registering your information",
+          err
+        )
       );
   };
 
@@ -51,8 +54,28 @@ const Register = props => {
             value={data.password}
             onChange={handleChange}
           />
+          <input
+            type="text"
+            name="name"
+            placeholder="Name"
+            value={data.name}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="location"
+            placeholder="Location"
+            value={data.location}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="contact_info"
+            placeholder="Email"
+            value={data.contact_info}
+            onChange={handleChange}
+          />
           {/* make a three inputs in this form for name, location, and contact_info */}
-
           <button type="submit">Register</button>
           {data.isFetching && "...Registering Profile"}{" "}
           {/* optional loading state */}
