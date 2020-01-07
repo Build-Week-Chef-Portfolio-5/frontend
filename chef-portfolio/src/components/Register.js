@@ -20,11 +20,12 @@ const Register = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setData({ ...data, isFetching: true });
+    // setData({ ...data, isFetching: true });
+    delete data.isFetching;
     axios
       .post("https://chefposts.herokuapp.com/api/chefs/register", data)
       .then(res => {
-        setData("response", res.data);
+        // setData("response", res.data);
         props.history.push("/");
       })
       .catch(err =>

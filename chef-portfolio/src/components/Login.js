@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+import axios from "axios";
 // import "./Login.css";
 
 const initialState = {
@@ -17,11 +17,13 @@ const Login = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    setInputValues({ ...inputValues, isFetching: true });
-    axiosWithAuth()
-      .post("/login")
+    // setInputValues({ ...inputValues, isFetching: true });
+    delete inputValues.isFetching;
+    axios
+      .post("https://chefposts.herokuapp.com/api/chefs/login", inputValues)
       .then(res => {
-        localStorage.getItem("token", res.data.payload);
+        console.log(res)
+        localStorage.setItem("token", res.data.token);
         props.history.push("/chef-portfolio"); // this is the name of the page that it will "push" to after a user logs in with correct credentials
       })
       .catch(err =>
@@ -48,7 +50,7 @@ const Login = props => {
             value={inputValues.password}
             onChange={handleChange}
           />
-          <button>Login</button>
+          <button type="submit">Login</button>
           {inputValues.isFetching && "...Logging You In"}{" "}
           {/* optional loading state */}
         </form>
