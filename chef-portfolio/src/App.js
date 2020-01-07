@@ -1,46 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
+import { Route, Link } from "react-router-dom";
+import Login from "./components/Login.js";
+import Register from "./components/Register.js";
 import "./App.css";
 
 function App() {
-  const [user, setUser] = useState({ email: "", password: ""});
-
-  const handleChange = event => {
-    setUser({ ...user, [event.target.name]: event.target.value });
-  };
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    console.log(user.email);
-    console.log(user.password);
-  }
-
   return (
     <div className="App">
-      <form onSubmit={event => handleSubmit(event)}>
-        <label>
-          Email:
-          <input 
-            type="text" 
-            name="email"
-            value={user.email}
-            onChange={event => handleChange(event)}
-          />
-        </label>
+      <Link to="/">Home</Link>
+      <Link to="/login">Login</Link>
+      <Link to="/register">Register</Link>
 
-        <label>
-          Password:
-          <input 
-            type="text" 
-            name="password"
-            value={user.password}
-            onChange={event => handleChange(event)}
-          />
-        </label>
+      <Route exact path="/login" component={Login}/>
+      <Route exact path="/register" component={Register}/>
 
-        <button>Submit</button>
-      </form>
     </div>
-  );
+  )
 }
 
 export default App;
