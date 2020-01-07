@@ -1,21 +1,60 @@
 import React, { useState, useEffect } from "react";
-import { useFormFields } from "../libs/hooksLib";
 import "./Register.css";
 
 function Register(props) {
-
-    const [fields, handleFieldChange] = useFormFields({
+    const [newUser, setNewUser] = useState({
         email: "",
         password: "",
         confirmPassword: "",
-        confirmationCode: "",
     });
+
+    const handleChange = event => {
+        setNewUser({ 
+          ...newUser, [event.target.name]: event.target.value
+          });
+      };
+    
+      const handleSubmit = event => {
+        event.preventDefault();
+      }
   
     return (
-      <div className="Register">
+        <div className="Register">
+          <form onSubmit={event => handleSubmit(event)}>
+            <label>
+              Email:
+              <input 
+                type="text" 
+                name="email"
+                value={newUser.email}
+                onChange={event => handleChange(event)}
+              />
+            </label>
+    
+            <label>
+              Password:
+              <input 
+                type="text" 
+                name="password"
+                value={newUser.password}
+                onChange={event => handleChange(event)}
+              />
+            </label>
 
-      </div>
-    );
+            <label>
+              Confirm Password:
+              <input 
+                type="text" 
+                name="password"
+                value={newUser.confirmPassword}
+                onChange={event => handleChange(event)}
+              />
+            </label>
+    
+            <button>Submit</button>
+          </form>
+        </div>
+      );
   }
 
 export default Register;
