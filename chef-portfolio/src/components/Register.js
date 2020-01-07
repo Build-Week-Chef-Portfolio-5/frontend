@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Register.css";
 
 function Register(props) {
@@ -20,6 +21,8 @@ function Register(props) {
   
     return (
         <div className="Register">
+          <h1>Register</h1>
+          
           <form onSubmit={event => handleSubmit(event)}>
             <label>
               Email:
@@ -53,6 +56,9 @@ function Register(props) {
     
             <button>Submit</button>
           </form>
+
+          Already have an account?
+          <Link to="/Login">Log in here</Link>
         </div>
       );
   }
