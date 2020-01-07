@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import { axiosWithAuth } from "../utils/axiosWithAuth";
 import axios from "axios";
 
 const initialState = {
@@ -76,7 +75,6 @@ const Register = props => {
             value={data.contact_info}
             onChange={handleChange}
           />
-          {/* make a three inputs in this form for name, location, and contact_info */}
           <button type="submit">Register</button>
           {data.isFetching && "...Registering Profile"}{" "}
           {/* optional loading state */}
