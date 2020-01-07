@@ -18,6 +18,7 @@ const Register = props => {
   };
 
   const handleSubmit = e => {
+    console.log("is this thing working?")
     e.preventDefault();
     setData({ ...data, isFetching: true });
     axiosWithAuth()
@@ -50,7 +51,8 @@ const Register = props => {
             value={data.password}
             onChange={handleChange}
           />
-          {/* make an three inputs in this form for name, location, and contact_info */}
+          {/* make a three inputs in this form for name, location, and contact_info */}
+
           <button>Register</button>
           {data.isFetching && "...Registering Profile"}{" "}
           {/* optional loading state */}
