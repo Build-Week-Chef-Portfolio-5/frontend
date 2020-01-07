@@ -43,16 +43,6 @@ function Register(props) {
                 onChange={event => handleChange(event)}
               />
             </label>
-
-            <label>
-              Confirm Password:
-              <input 
-                type="text" 
-                name="password"
-                value={newUser.confirmPassword}
-                onChange={event => handleChange(event)}
-              />
-            </label>
     
             <button>Submit</button>
           </form>
