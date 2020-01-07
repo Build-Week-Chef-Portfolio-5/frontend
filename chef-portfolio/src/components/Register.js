@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+// import { axiosWithAuth } from "../utils/axiosWithAuth";
+import axios from "axios";
 
 const initialState = {
   username: "",
@@ -18,14 +19,13 @@ const Register = props => {
   };
 
   const handleSubmit = e => {
-    console.log("is this thing working?")
     e.preventDefault();
     setData({ ...data, isFetching: true });
-    axiosWithAuth()
-      .post("/register")
+    axios
+      .post("https://chefposts.herokuapp.com/api/chefs/register")
       .then(res => {
-        localStorage.getItem("token", res.data.payload);
-        props.history.push("/chef-portfolio");
+        setData("response", res.data);
+        props.history.push("/");
       })
       .catch(err =>
         console.log("sorry, an error has occured while registering your information", err)
@@ -53,7 +53,7 @@ const Register = props => {
           />
           {/* make a three inputs in this form for name, location, and contact_info */}
 
-          <button>Register</button>
+          <button type="submit">Register</button>
           {data.isFetching && "...Registering Profile"}{" "}
           {/* optional loading state */}
         </form>
