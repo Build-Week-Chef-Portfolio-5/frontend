@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Sidebar from "../img/chef.jpg";
 import "./Login.css";
@@ -58,6 +59,12 @@ const Login = props => {
             {inputValues.isFetching && "...Logging You In"}{" "}
             {/* optional loading state */}
         </form>
+
+        <div className="link">
+          Don't have an account? 
+          <Link to="/register">Register here.</Link>
+        </div>
+
         </div>
       </div>
     </div>

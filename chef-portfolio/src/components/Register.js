@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Register.css";
 import Sidebar from "../img/chef.jpg";
 import axios from "axios";
@@ -84,8 +85,11 @@ const Register = props => {
           {/* optional loading state */}
         </form>
 
-        Already have an account? 
-        <Link to="/">Log in here.</Link>
+        <div className="link">
+          Already have an account? 
+          <Link to="/">Log in here.</Link>
+        </div>
+
       </div>
       </div>
     </div>

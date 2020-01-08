@@ -60,3 +60,20 @@ body{
     border-radius:4px;
     background-color:#FFB284;
 }
+
+.link{
+    margin-top:25px;
+    margin-left:20px;
+    font:13px "Calibri", sans-serif;
+    color:#455252;
+}
+
+.link a{
+    margin-left:4px;
+    text-decoration:none;
+    color:#748080;
+}
+
+.link a:hover{
+    color:#FFB284;
+}
