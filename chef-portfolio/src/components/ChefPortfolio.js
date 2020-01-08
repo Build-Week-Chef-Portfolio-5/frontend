@@ -24,7 +24,7 @@ const ChefPortfolio = props => {
       .get(`/${props.chefId || localStorage.getItem("id")}/posts`)
       .then(res => {
         setPosts(res.data);
-        console.log(posts);
+        console.log(res.data);
       })
       .catch(err =>
         console.log(
@@ -49,6 +49,16 @@ const ChefPortfolio = props => {
       .catch(err => console.log("sorry, could not edit recipe", err));
   };
 
+  const deleteRecipe = recipe => {
+    axiosWithAuth()
+      .delete(`/posts/${recipe.id}`, recipe)
+      .then(res => {
+        console.log(res);
+        setPosts();
+      })
+      .catch(err => console.log("sorry, could not delete recipe", err));
+  };
+
   return (
     <>
       <h1>Welcome to your Chef Portfolio</h1>
@@ -64,7 +74,7 @@ const ChefPortfolio = props => {
             <p>{recipe.instructions}</p>
             <p>{recipe.chef_id}</p>
             <button onClick={() => editRecipe(recipe)}>Edit</button>
-            <button type="submit">Delete</button>
+            <button onClick={() => deleteRecipe(recipe)}>Delete</button>
             <hr />
           </div>
         ))}
