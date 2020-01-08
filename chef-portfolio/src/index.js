@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import './fonts/Poppins-Bold.otf';
+import './fonts/Poppins-Italic.otf';
+import './fonts/Poppins-Regular.otf';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));

@@ -33,8 +33,8 @@ const Login = props => {
 
   return (
     <>
-      <h1>Login</h1>
-      <div>
+      <div className="Login">
+        <h1>Login to continue</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"

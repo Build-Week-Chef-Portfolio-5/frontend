@@ -1,0 +1,43 @@
+.Login{
+    padding: 20px 0;
+    font-family: Poppins, sans-serif;
+}
+
+.Login h1{
+    margin-left:20px;
+    margin-bottom:30px;
+    font-weight:normal;
+    font-size:1.5em;
+    color:#455252;
+}
+  
+.Login form{
+    margin: 0 auto;
+    max-width:300px;
+}
+
+.Login form input{
+    width:300px;
+    margin: 0 auto;
+    margin-bottom:15px;
+    padding:15px;
+    border:1px solid lightgrey;
+    border-radius:4px;
+}
+
+.Login form input:hover{
+    border-color:#FFB284;
+}
+
+.Login button{
+    width: 333px;
+    margin: 0 auto;
+    padding:10px;
+    color:white;
+    font:12px Poppins, sans-serif;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    border:0px;
+    border-radius:4px;
+    background-color:#FFB284;
+}
