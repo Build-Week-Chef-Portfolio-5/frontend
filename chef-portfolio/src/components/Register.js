@@ -24,7 +24,8 @@ const Register = props => {
     axios
       .post("https://chefposts.herokuapp.com/api/chefs/register", data)
       .then(res => {
-        // setData("response", res.data);
+        props.setChefId(res.data.id)
+        localStorage.setItem("id", res.data.id)
         props.history.push("/");
       })
       .catch(err =>
@@ -48,7 +49,7 @@ const Register = props => {
             onChange={handleChange}
           />
           <input
-            type="text"
+            type="password"
             name="password"
             placeholder="Password"
             value={data.password}
