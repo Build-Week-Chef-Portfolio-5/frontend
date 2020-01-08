@@ -3,13 +3,12 @@ import { axiosWithAuth } from "../utils/axiosWithAuth";
 // import AddRecipe from "./AddRecipe";
 
 const initialRecipe = {
-  id: "",
+  id: null,
   name: "",
   image_url: "",
   title: "",
   meal_type: "",
   ingredients: "",
-  instructions: "",
   instructions: "",
   chef_id: ""
 };
@@ -40,10 +39,12 @@ const ChefPortfolio = props => {
   };
 
   const saveEdit = e => {
-    // e.preventDefault()
+    const {image_url, title, meal_type, ingredients, instructions} = initialRecipe
+    e.preventDefault()
     axiosWithAuth()
-      .put(`/posts/${recipeToEdit.id}`, recipeToEdit)
+      .put(`/posts/${recipeToEdit.id}`, {image_url, title, meal_type, ingredients, instructions})
       .then(res => {
+        console.log(res)
         setPosts();
       })
       .catch(err => console.log("sorry, could not edit recipe", err));
@@ -72,7 +73,7 @@ const ChefPortfolio = props => {
             <p>{recipe.meal_type}</p>
             <p>{recipe.ingredients}</p>
             <p>{recipe.instructions}</p>
-            <p>{recipe.chef_id}</p>
+            {/* <p>{recipe.chef_id}</p> */}
             <button onClick={() => editRecipe(recipe)}>Edit</button>
             <button onClick={() => deleteRecipe(recipe)}>Delete</button>
             <hr />
@@ -82,12 +83,12 @@ const ChefPortfolio = props => {
         {edit && (
           <form onSubmit={saveEdit}>
             <h3>Edit Recipe</h3>
-            <input
+            {/* <input
               onChange={e =>
                 setRecipeToEdit({ ...recipeToEdit, name: e.target.value })
               }
               value={recipeToEdit.name}
-            />
+            /> */}
 
             <input
               onChange={e =>
