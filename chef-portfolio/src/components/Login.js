@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Sidebar from "../img/chef.jpg";
 import "./Login.css";
+
 
 const initialState = {
   username: "",
@@ -32,30 +34,33 @@ const Login = props => {
   };
 
   return (
-    <>
+    <div>
       <div className="Login">
-        <h1>Login to continue</h1>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={inputValues.username}
-            onChange={handleChange}
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={inputValues.password}
-            onChange={handleChange}
-          />
-          <button type="submit">Login</button>
-          {inputValues.isFetching && "...Logging You In"}{" "}
-          {/* optional loading state */}
+        <img src={Sidebar}/>
+        <div className="box">
+          <h1>Login to continue</h1>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={inputValues.username}
+              onChange={handleChange}
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={inputValues.password}
+              onChange={handleChange}
+            />
+            <button type="submit">Login</button>
+            {inputValues.isFetching && "...Logging You In"}{" "}
+            {/* optional loading state */}
         </form>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@ body{
     background-color:#ededed;
 }
 
-.Login{
+.Register{
     display:flex;
     margin: 0 auto;
     width:850px;
@@ -15,16 +15,16 @@ body{
     box-shadow: 10px 10px 10px 0 #D9D9D9;
 }
 
-.box{
+.Register{
     margin: 0 auto;
 }
 
-.Login img{
+.Register img{
     width:400px;
     border-radius:5px 0 0 5px;
 }
 
-.Login h1{
+.Register h1{
     margin-top:70px;
     margin-left:20px;
     margin-bottom:30px;
@@ -33,11 +33,11 @@ body{
     color:#455252;
 }
   
-.Login form{
+.Register form{
     max-width:280px;
 }
 
-.Login form input{
+.Register form input{
     width:280px;
     margin-bottom:15px;
     padding:15px;
@@ -45,11 +45,11 @@ body{
     border:1px solid lightgrey;
 }
 
-.Login form input:hover{
+.Register form input:hover{
     border-color:#FFB284;
 }
 
-.Login button{
+.Register button{
     width: 312px;
     padding:10px;
     color:white;
