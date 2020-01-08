@@ -7,6 +7,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import ChefPortfolio from "./components/ChefPortfolio";
+import AllRecipes from "./components/AllRecipes";
 
 function App() {
   const [chefId, setChefId] = useState(null);
@@ -16,6 +17,7 @@ function App() {
       <div className="App">
         <Route exact path="/" render={(props) => <Login setChefId={setChefId} {...props}/>} />
         <Route path="/register" render={(props) => <Register setChefId={setChefId} {...props}/>} />
+        <Route path="/all-recipes" component={AllRecipes} /> {/* all recipes for non-logged in users */}
         <PrivateRoute path="/chef-portfolio" component={(props) => <ChefPortfolio chefId={chefId} {...props}/>}  />
       </div>
     </Router>
