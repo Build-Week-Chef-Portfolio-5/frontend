@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import AddRecipe from "./AddRecipe";
 
-const ChefPortfolio = () => {
+const ChefPortfolio = props => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         axiosWithAuth()
-        .get("/:id/posts")
+        .get(`/${props.chefId}/posts`)
         .then(res => {
             setPosts(res.data);
             console.log(posts)
@@ -17,7 +18,7 @@ const ChefPortfolio = () => {
     return (
         <>
         <h1>Welcome to your Chef Portfolio</h1>
-        {/* will add in the AddRecipe component here */}
+        <AddRecipe/>
         <div>
             {posts.map(recipe => (
                 <div key={recipe.id} className="recipes">
