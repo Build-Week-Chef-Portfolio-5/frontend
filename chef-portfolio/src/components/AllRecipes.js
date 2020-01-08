@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-import AddRecipe from "./AddRecipe";
+// import AddRecipe from "./AddRecipe";
 
-const ChefPortfolio = props => {
+const AllRecipes = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         axiosWithAuth()
-        .get(`/${props.chefId || localStorage.getItem("id")}/posts`)
+        .get("/posts")
         .then(res => {
             setPosts(res.data);
             console.log(posts)
         })
-        .catch(err => console.log("sorry, an error has occurred while fetching chef portfolio page", err))
+        .catch(err => console.log("sorry, an error has occurred while fetching recipes", err))
     }, []);
 
     return (
         <>
         <h1>Welcome to your Chef Portfolio</h1>
-        <AddRecipe/> 
         <div>
             {posts.map(recipe => (
                 <div key={recipe.id} className="recipes">
@@ -29,8 +28,6 @@ const ChefPortfolio = props => {
                     <p>{recipe.ingredients}</p>
                     <p>{recipe.instructions}</p>
                     <p>{recipe.chef_id}</p>
-                    <button type="submit">Edit</button>
-                    <button type="submit">Delete</button>
                     <hr/>
                 </div>
             ))}
@@ -39,4 +36,4 @@ const ChefPortfolio = props => {
     );
 };
 
-export default ChefPortfolio;
+export default AllRecipes;
