@@ -17,7 +17,7 @@ const ChefPortfolio = () => {
     return (
         <>
         <h1>Welcome to your Chef Portfolio</h1>
-        {/* will be putting the components w/forms for the recipes CRUD and mapping through */}
+        {/* will add in the AddRecipe component here */}
         <div>
             {posts.map(recipe => (
                 <div key={recipe.id} className="recipes">
