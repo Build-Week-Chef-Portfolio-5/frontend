@@ -28,6 +28,7 @@ const AllRecipes = () => {
                     <p>{recipe.ingredients}</p>
                     <p>{recipe.instructions}</p>
                     <p>{recipe.chef_id}</p>
+                    <hr/>
                 </div>
             ))}
         </div>

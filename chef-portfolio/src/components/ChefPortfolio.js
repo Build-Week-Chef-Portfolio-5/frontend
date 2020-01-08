@@ -31,6 +31,7 @@ const ChefPortfolio = props => {
                     <p>{recipe.chef_id}</p>
                     <button type="submit">Edit</button>
                     <button type="submit">Delete</button>
+                    <hr/>
                 </div>
             ))}
         </div>
