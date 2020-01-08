@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
-// import "./Login.css";
+import Sidebar from "../img/chef.jpg";
+import "./Login.css";
+
 
 const initialState = {
   username: "",
@@ -34,30 +37,39 @@ const Login = props => {
   };
 
   return (
-    <>
-      <h1>Login</h1>
-      <div>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="username"
-            placeholder="Username"
-            value={inputValues.username}
-            onChange={handleChange}
-          />
-          <input
-            type="password"
-            name="password"
-            placeholder="Password"
-            value={inputValues.password}
-            onChange={handleChange}
-          />
-          <button type="submit">Login</button>
-          {inputValues.isFetching && "...Logging You In"}{" "}
-          {/* optional loading state */}
+    <div>
+      <div className="Login">
+        <img src={Sidebar}/>
+        <div className="box">
+          <h1>Login to continue</h1>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="username"
+              placeholder="Username"
+              value={inputValues.username}
+              onChange={handleChange}
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Password"
+              value={inputValues.password}
+              onChange={handleChange}
+            />
+            <button type="submit">Login</button>
+            {inputValues.isFetching && "...Logging You In"}{" "}
+            {/* optional loading state */}
         </form>
+
+        <div className="link">
+          Don't have an account? 
+          <Link to="/register">Register here.</Link>
+        </div>
+
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
