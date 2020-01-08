@@ -39,8 +39,9 @@ const ChefPortfolio = props => {
   };
 
   const saveEdit = e => {
-    const {image_url, title, meal_type, ingredients, instructions} = initialRecipe
-    e.preventDefault()
+    const {image_url, title, meal_type, ingredients, instructions} = recipeToEdit
+    console.log({image_url, title, meal_type, ingredients, instructions})
+    // e.preventDefault()
     axiosWithAuth()
       .put(`/posts/${recipeToEdit.id}`, {image_url, title, meal_type, ingredients, instructions})
       .then(res => {
