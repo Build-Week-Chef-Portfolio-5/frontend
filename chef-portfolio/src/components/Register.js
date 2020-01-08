@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./Login.css";
+import Sidebar from "../img/chef.jpg";
 import axios from "axios";
 
 const initialState = {
@@ -37,9 +40,11 @@ const Register = props => {
   };
 
   return (
-    <>
-      <h1>Register</h1>
-      <div>
+    <div>
+      <div className="Login">
+      <img src={Sidebar}/>
+      <div className="box">
+        <h1>Register to continue</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -80,8 +85,15 @@ const Register = props => {
           {data.isFetching && "...Registering Profile"}{" "}
           {/* optional loading state */}
         </form>
+
+        <div className="link">
+          Already have an account? 
+          <Link to="/">Log in here.</Link>
+        </div>
+
       </div>
-    </>
+      </div>
+    </div>
   );
 };
 
