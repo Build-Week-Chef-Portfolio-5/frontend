@@ -100,7 +100,7 @@ const AddRecipe = props => {
   //handles state changes for the newRecipe object
   const handleChange = e => {
     e.preventDefault();
-    setAddRecipe({ ...newRecipe, [e.target.name]: e.target.value });
+    setAddRecipe({ ...addRecipe, [e.target.name]: e.target.value });
   };
   //handles state changes for the ingredients and tags arrays before adding them to the newRecipe Object
   const handleIngredient = e => {
@@ -125,7 +125,7 @@ const AddRecipe = props => {
       addRecipe.time = Date.now();
       state.dispatch({
         type: "ADD",
-        payload: [newRecipe]
+        payload: [addRecipe]
       });
       setAddRecipe({
         id: "",
@@ -144,8 +144,8 @@ const AddRecipe = props => {
     e.stopPropagation();
     if (ingredients.ingredients != "") {
       setAddRecipe({
-        ...addrecipe,
-        ingredients: [...addrecipe.ingredients, ingredients.ingredients]
+        ...addRecipe,
+        ingredients: [...addRecipe.ingredients, ingredients.ingredients]
       });
       setIngredients({ ingredients: "" });
       document.getElementById("ingredientinput").value = "";
@@ -158,7 +158,7 @@ const AddRecipe = props => {
       e.stopPropagation();
       setAddRecipe({
         ...addRecipe,
-        categories: [...newRecipe.categories, tags.tags]
+        categories: [...addRecipe.categories, tags.tags]
       });
       setTags({ tags: "" });
       document.getElementById("taginput").value = "";
@@ -171,7 +171,7 @@ const AddRecipe = props => {
         id="recipe_name"
         type="text"
         name="recipe_name"
-        value={newRecipe.recipe_name}
+        value={addRecipe.recipe_name}
         placeholder="Title:"
         onChange={handleChange}
         required
@@ -179,7 +179,7 @@ const AddRecipe = props => {
       <InputBox
         type="text"
         name="source"
-        value={newRecipe.source}
+        value={addRecipe.source}
         placeholder="Author:"
         onChange={handleChange}
 
