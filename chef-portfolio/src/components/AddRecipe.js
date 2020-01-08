@@ -1,8 +1,7 @@
 // Add a form to add a new recipe
 import React, { useState, useContext } from "react";
-import { axiosAuth } from "/utils/axiosWithAuth";
 import styled from "styled-components";
-import { Context } from "../utils";
+// import { Context } from "../utils";
 
 const Wrap = styled.div`
   overflow: auto;
@@ -80,7 +79,7 @@ const ListItems = styled.span`
 `;
 
 const AddRecipe = props => {
-  const state = useContext(Context);
+//   const state = useContext(Context);
   const [addRecipe, setAddRecipe] = useState({
     id: "",
     recipe_name: "",
@@ -123,7 +122,7 @@ const AddRecipe = props => {
       //   .post("/recipe", newRecipe)
       //   .then(res => console.log(res.data));
       addRecipe.time = Date.now();
-      state.dispatch({
+      props.dispatch({
         type: "ADD",
         payload: [addRecipe]
       });
