@@ -24,6 +24,8 @@ const Login = props => {
       .then(res => {
         console.log(res)
         localStorage.setItem("token", res.data.token);
+        props.setChefId(res.data.id)
+        localStorage.setItem("id", res.data.id)
         props.history.push("/chef-portfolio"); // this is the name of the page that it will "push" to after a user logs in with correct credentials
       })
       .catch(err =>
