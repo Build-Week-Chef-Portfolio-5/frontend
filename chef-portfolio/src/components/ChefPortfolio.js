@@ -7,7 +7,7 @@ const ChefPortfolio = props => {
 
     useEffect(() => {
         axiosWithAuth()
-        .get(`/${props.chefId}/posts`)
+        .get(`/${props.chefId || localStorage.getItem("id")}/posts`)
         .then(res => {
             setPosts(res.data);
             console.log(posts)
