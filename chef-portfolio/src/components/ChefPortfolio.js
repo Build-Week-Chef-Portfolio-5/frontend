@@ -29,6 +29,8 @@ const ChefPortfolio = props => {
                     <p>{recipe.ingredients}</p>
                     <p>{recipe.instructions}</p>
                     <p>{recipe.chef_id}</p>
+                    <button type="submit">Edit</button>
+                    <button type="submit">Delete</button>
                 </div>
             ))}
         </div>
