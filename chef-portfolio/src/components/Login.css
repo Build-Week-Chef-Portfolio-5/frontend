@@ -26,7 +26,6 @@ body{
 
 .Login h1{
     margin-top:70px;
-    margin-left:20px;
     margin-bottom:30px;
     font-weight:normal;
     font-size:1.5em;
@@ -34,6 +33,7 @@ body{
 }
   
 .Login form{
+    margin-left:-25px;
     max-width:280px;
 }
 
@@ -59,4 +59,20 @@ body{
     border:0px;
     border-radius:4px;
     background-color:#FFB284;
+}
+
+.link{
+    margin-top:25px;
+    font:13px "Calibri", sans-serif;
+    color:#455252;
+}
+
+.link a{
+    margin-left:4px;
+    text-decoration:none;
+    color:#748080;
+}
+
+.link a:hover{
+    color:#FFB284;
 }

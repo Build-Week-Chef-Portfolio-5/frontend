@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Register.css";
+import "./Login.css";
 import Sidebar from "../img/chef.jpg";
 import axios from "axios";
 
@@ -43,7 +43,7 @@ const Register = props => {
       <div className="Login">
       <img src={Sidebar}/>
       <div className="box">
-        <h1>Register</h1>
+        <h1>Register to continue</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
