@@ -625,7 +625,7 @@ header img {
     align-items: center;
     overflow: hidden;
     overflow-y: scroll;
-    min-height: 610px;
+    min-height: 650px;
   }
   .center .cardx:nth-child(2) .spacedImgs div {
     min-width: 200px;
