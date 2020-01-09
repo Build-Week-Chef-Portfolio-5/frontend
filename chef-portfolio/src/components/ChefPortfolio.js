@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
-// import AddRecipe from "./AddRecipe";
+import AddRecipe from "./AddRecipe";
 
 const initialRecipe = {
   id: null,
@@ -64,7 +64,7 @@ const ChefPortfolio = props => {
   return (
     <>
       <h1>Welcome to your Chef Portfolio</h1>
-      {/* <AddRecipe/> */}
+      <AddRecipe/>
       <div>
         {posts.map(recipe => (
           <div key={recipe.id} className="recipes">
