@@ -7,6 +7,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import ChefPortfolio from "./components/ChefPortfolio";
+import NavBar from "./components/NavBar";
 
 function App() {
   // const [user, setUser] = useState({ email: "", password: ""});
@@ -24,6 +25,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <NavBar/>
         <Route exact path="/" component={Login} />
         <Route path="/register" component={Register} />
         <PrivateRoute path="/chef-portfolio" component={ChefPortfolio} />

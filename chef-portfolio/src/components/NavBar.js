@@ -1,1 +1,14 @@
-// build out NavBar component that links to the register route and the login route
+import React from "react";
+import { Link } from "react-router-dom";
+import "./NavBar.css";
+
+function NavBar() {
+    return (
+      <header className="NavBar">
+        <button><Link to="/">Sign Out</Link></button>
+      </header>
+    );
+}
+
+export default NavBar;
+  
