@@ -40,6 +40,7 @@ const ChefPortfolio = props => {
   };
 
   const saveEdit = e => {
+    e.preventDefault()
     const {
       image_url,
       title,
@@ -58,8 +59,9 @@ const ChefPortfolio = props => {
       })
       .then(res => {
         console.log(res);
+        document.location.reload(true);
       })
-      .catch(err => console.log("sorry, could not edit recipe", err));
+      .catch(err => console.log("sorry, could not edit recipe", err.response));
   };
 
   const deleteRecipe = recipe => {
@@ -69,7 +71,7 @@ const ChefPortfolio = props => {
         console.log(res);
         document.location.reload(true);
       })
-      .catch(err => console.log("sorry, could not delete recipe", err));
+      .catch(err => console.log("sorry, could not delete recipe", err.response));
   };
 
   return (
