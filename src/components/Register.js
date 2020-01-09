@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./Login.css";
 import Sidebar from "../img/chef.jpg";
 import axios from "axios";
+import HomeNav from "./HomeNav";
 
 const initialState = {
   username: "",
@@ -40,6 +41,7 @@ const Register = props => {
 
   return (
     <div>
+      <HomeNav />
       <div className="Login">
         <img src={Sidebar} />
         <div className="box">
