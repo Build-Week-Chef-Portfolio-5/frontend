@@ -114,7 +114,7 @@ abtRow.innerHTML=`
 <ul class="social-media ">
 <li><a ><i class="fab fa-react"></i></a></li>
 <li><a ><i class="fab fa-js"></i></a></li>
-<li><a href="#"><i class="fab fa-github"></i></a></li>
+<li><a href="https://github.com/chelsabeth"><i class="fab fa-github"></i></a></li>
 </ul>
 <div class="user-info cardioTxt">
 <span class="cardioTxt"> <span> <img src="img/frontend.png" width="30" height="30" style="border-radius: 100%;margin-bottom:5px;" alt=""></span> FrontEnd Developer
@@ -129,7 +129,7 @@ abtRow.innerHTML=`
 <ul class="social-media ">
 <li><a ><i class="fab fa-react"></i></a></li>
 <li><a ><i class="fab fa-js"></i></a></li>
-<li><a href="#"><i class="fab fa-github"></i></a></li>
+<li><a href="https://github.com/AesonJohnson"><i class="fab fa-github"></i></a></li>
 </ul>
 <div class="user-info cardioTxt">
 <span class="cardioTxt"> <span> <img src="img/frontend.png" width="30" height="30" style="border-radius: 100%;margin-bottom:5px;" alt=""></span> FrontEnd Developer
@@ -145,7 +145,7 @@ abtRow.innerHTML=`
 <ul class="social-media ">
 <li><a ><i class="fab fa-node-js"></i></a></li>
 <li><a ><i class="fab fa-js"></i></a></li>
-<li><a href="#"><i class="fab fa-github"></i></a></li>
+<li><a href="https://github.com/NadeemAnvaritafti"><i class="fab fa-github"></i></a></li>
 </ul>
 <div class="user-info cardioTxt">
 <span class="cardioTxt"> <span> <img src="img/backend.png" width="30" height="30" style="border-radius: 100%;margin-bottom:5px;" alt=""></span> BackEnd Developer
@@ -177,7 +177,7 @@ abtRow.innerHTML=`
 <li><a ><i class="fab fa-less"></i></a></li>
 <li><a ><i class="fab fa-css3"></i></a></li>
 <li><a ><i class="fab fa-js"></i></a></li>
-<li><a href="#"><i class="fab fa-github"></i></a></li>
+<li><a href="https://github.com/guytonoriji"><i class="fab fa-github"></i></a></li>
 </ul>
 <div class="user-info cardioTxt">
 <span class="cardioTxt"><span> <img src="img/ui.png" width="30" height="30" style="border-radius: 100%;margin-bottom:5px;" alt=""></span> UI Developer
@@ -209,7 +209,7 @@ abtRow.innerHTML=`
 <ul class="social-media ">
 <li><a ><i class="fab fa-react"></i></a></li>
 <li><a ><i class="fab fa-js"></i></a></li>
-<li><a href="#"><i class="fab fa-github"></i></a></li>
+<li><a href="https://github.com/CoBe18"><i class="fab fa-github"></i></a></li>
 </ul>
 <div class="user-info cardioTxt">
 <span class="cardioTxt"> <span> <img src="img/frontend.png" width="30" height="30" style="border-radius: 100%;margin-bottom:5px;" alt=""></span> FrontEnd Developer</span>
