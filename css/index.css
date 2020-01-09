@@ -57,8 +57,8 @@ body {
   -webkit-text-fill-color: #000;
 }
 .login {
-  background: -webkit-linear-gradient(to bottom right, green, cadetblue, green, cadetblue, green);
-  background: linear-gradient(to bottom right, green, cadetblue, green, cadetblue, green);
+  background: -webkit-linear-gradient(to bottom right, #ffb284, cadetblue, #ffb284, cadetblue, #ffb284);
+  background: linear-gradient(to bottom right, #ffb284, cadetblue, #ffb284, cadetblue, #ffb284);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -359,7 +359,7 @@ header nav a {
 header nav a:hover,
 header nav a:focus {
   -webkit-text-stroke: 0.5px #1e214e;
-  text-decoration-color: #b3001b9a;
+  text-decoration-color: #ffb284;
   text-shadow: 0 0 20px azure;
 }
 header img {
@@ -469,7 +469,7 @@ header img {
   padding: 1% 0%;
 }
 .center .cardx h2 {
-  border-bottom: 1.5px dashed #b3001b9a;
+  border-bottom: 1.5px dashed #ffb284;
   border-top: 2px dashed #1e214e;
   width: 100%;
   font-weight: bolder;
@@ -484,7 +484,7 @@ header img {
 }
 .center .cardx h2:hover,
 .center .cardx h2:focus {
-  border-bottom: dotted 3px #b3001b9a;
+  border-bottom: dotted 3px #ffb284;
   border-top: dotted 4px #1e214e;
   cursor: default;
 }

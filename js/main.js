@@ -3,8 +3,11 @@
 const clockText = document.querySelector(".clock b em")
 const clockBtn = document.querySelector(".clock b i")
 const clockBox = document.querySelector(".clock")
-
-
+const registerBtn = document.querySelectorAll(".register")
+//send to register
+registerBtn.forEach((x)=>{
+    x.onclick=()=>{location.href=' https://chefportfoliobw1.netlify.com/register'}
+})
 //START OF CLOCK CLASS
 class Clock{//clock class to request full time 
 constructor(year,month,day,date,pod,hour,min,fullDate){
