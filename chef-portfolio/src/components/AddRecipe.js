@@ -3,17 +3,17 @@ import React, { useState, useContext } from "react";
 import styled from "styled-components";
 // import { Context } from "../utils";
 
-const Wrap = styled.div`
-  overflow: auto;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  background: #d85505;
-  padding: 5px;
-  border-radius: 15px;
-`;
+// const Wrap = styled.div`
+//   overflow: auto;
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   justify-content: center;
+//   align-items: center;
+//   background: #d85505;
+//   padding: 5px;
+//   border-radius: 15px;
+// `;
 
 const InputBox = styled.input`
   font-family: "Poppins", sans-serif;
