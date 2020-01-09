@@ -5,7 +5,7 @@ import "./NavBar.css";
 function NavBar() {
     return (
       <header className="NavBar">
-        <button><Link to="/">Sign Out</Link></button>
+        <button><Link to="/">Log Out</Link></button>
       </header>
     );
 }

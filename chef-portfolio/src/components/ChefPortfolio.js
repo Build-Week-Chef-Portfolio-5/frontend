@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import AddRecipe from "./AddRecipe";
+import NavBar from "./NavBar";
 
 const initialRecipe = {
   id: null,
@@ -73,6 +74,7 @@ const ChefPortfolio = props => {
 
   return (
     <>
+      <NavBar />
       <h1>Welcome to your Chef Portfolio</h1>
       <AddRecipe />
       <div>
