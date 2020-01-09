@@ -39,7 +39,7 @@ const AddRecipe = props => {
         console.log(res.data);
         setAddRecipe(res.data);
       })
-      .catch(err => console.log("sorry, can not add a new recipe", err));
+      .catch(err => console.log("sorry, can not add a new recipe", err.response));
   };
 
   return (
