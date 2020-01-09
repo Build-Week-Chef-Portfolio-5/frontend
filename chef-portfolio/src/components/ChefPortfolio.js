@@ -39,12 +39,24 @@ const ChefPortfolio = props => {
   };
 
   const saveEdit = e => {
-    const {image_url, title, meal_type, ingredients, instructions} = recipeToEdit
-    console.log({image_url, title, meal_type, ingredients, instructions})
+    const {
+      image_url,
+      title,
+      meal_type,
+      ingredients,
+      instructions
+    } = recipeToEdit;
+    console.log({ image_url, title, meal_type, ingredients, instructions });
     axiosWithAuth()
-      .put(`/posts/${recipeToEdit.id}`, {image_url, title, meal_type, ingredients, instructions})
+      .put(`/posts/${recipeToEdit.id}`, {
+        image_url,
+        title,
+        meal_type,
+        ingredients,
+        instructions
+      })
       .then(res => {
-        console.log(res)
+        console.log(res);
       })
       .catch(err => console.log("sorry, could not edit recipe", err));
   };
@@ -54,7 +66,7 @@ const ChefPortfolio = props => {
       .delete(`/posts/${recipe.id}`, recipe)
       .then(res => {
         console.log(res);
-        document.location.reload(true)
+        document.location.reload(true);
       })
       .catch(err => console.log("sorry, could not delete recipe", err));
   };
@@ -62,7 +74,7 @@ const ChefPortfolio = props => {
   return (
     <>
       <h1>Welcome to your Chef Portfolio</h1>
-      <AddRecipe/>
+      <AddRecipe />
       <div>
         {posts.map(recipe => (
           <div key={recipe.id} className="recipes">
@@ -72,7 +84,6 @@ const ChefPortfolio = props => {
             <p>{recipe.meal_type}</p>
             <p>{recipe.ingredients}</p>
             <p>{recipe.instructions}</p>
-            {/* <p>{recipe.chef_id}</p> */}
             <button onClick={() => editRecipe(recipe)}>Edit</button>
             <button onClick={() => deleteRecipe(recipe)}>Delete</button>
             <hr />
@@ -82,13 +93,6 @@ const ChefPortfolio = props => {
         {edit && (
           <form onSubmit={saveEdit}>
             <h3>Edit Recipe</h3>
-            {/* <input
-              onChange={e =>
-                setRecipeToEdit({ ...recipeToEdit, name: e.target.value })
-              }
-              value={recipeToEdit.name}
-            /> */}
-
             <input
               onChange={e =>
                 setRecipeToEdit({ ...recipeToEdit, image_url: e.target.value })
