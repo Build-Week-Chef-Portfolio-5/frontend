@@ -43,47 +43,12 @@ body {
   box-shadow: 0 0 3px #000;
   font-size: 1.5rem;
 }
-.starz {
-  -webkit-text-fill-color: #ffff5f;
-  color: #ffff5f;
-  -webkit-text-stroke: 0.5px #000;
-  -webkit-text-shadow: 0 0 3px gold;
-  text-shadow: 0 0 3px gold;
-  -webkit-animation: glowingStarz 0.5s linear infinite;
-  animation: glowingStarz 0.5s linear infinite;
-}
-.pn {
-  background: -webkit-linear-gradient(to right, gold, gold, gold, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-  background: linear-gradient(to right, gold, gold, gold, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 0.5px #000;
-}
-.halfS {
-  -webkit-text-fill-color: gold;
-  color: gold;
-  -webkit-text-stroke: 0.5px #000;
-}
 .register {
-  background: -webkit-linear-gradient(to bottom right, azure, #000, azure, #000, azure);
-  background: linear-gradient(to bottom right, azure, #000, azure, #000, azure);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px azure;
-  -webkit-transition: color 1s linear ;
-  transition: color 1s linear ;
-  -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
-  cursor: pointer;
-}
-.register:hover,
-.register:focus {
   -webkit-text-fill-color: azure;
   color: azure;
   -webkit-text-stroke: 1px #000;
   text-shadow: 0 0 5px red;
+  cursor: pointer;
 }
 .register em {
   text-shadow: 0 0 5px #000;
@@ -101,35 +66,6 @@ body {
   -webkit-transition: color 1s linear ;
   transition: color 1s linear ;
   font-weight: bolder;
-}
-@-webkit-keyframes glowingStarz {
-  from {
-    -webkit-text-shadow: 0 0 5px gold;
-    text-shadow: 0 0 5px gold;
-  }
-  to {
-    -webkit-text-shadow: 0 0 8px gold;
-    text-shadow: 0 0 8px gold;
-  }
-}
-@keyframes glowingStarz {
-  from {
-    -webkit-text-shadow: 0 0 5px gold;
-    text-shadow: 0 0 5px gold;
-  }
-  to {
-    -webkit-text-shadow: 0 0 8px gold;
-    text-shadow: 0 0 8px gold;
-  }
-}
-.price {
-  -webkit-text-fill-color: #00ff00;
-  color: #00ff00;
-  -webkit-text-stroke: 0.5px #000;
-  -webkit-text-shadow: 0 0 3px green;
-  text-shadow: 0 0 3px green;
-  -webkit-animation: price 0.5s linear infinite;
-  animation: price 0.5s linear infinite;
 }
 .titlez {
   -webkit-text-fill-color: #000;
@@ -160,26 +96,6 @@ body {
   font-size: 2.5rem;
   font-family: fantasy;
   font-weight: bolder;
-}
-@-webkit-keyframes price {
-  from {
-    -webkit-text-shadow: 0 0 5px green;
-    text-shadow: 0 0 5px green;
-  }
-  to {
-    -webkit-text-shadow: 0 0 8px green;
-    text-shadow: 0 0 8px green;
-  }
-}
-@keyframes price {
-  from {
-    -webkit-text-shadow: 0 0 5px green;
-    text-shadow: 0 0 5px green;
-  }
-  to {
-    -webkit-text-shadow: 0 0 8px green;
-    text-shadow: 0 0 8px green;
-  }
 }
 @-webkit-keyframes abt {
   from {
@@ -510,6 +426,10 @@ header img {
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: 0 0 3px #fff;
   -webkit-text-stroke: 0.5px #000;
+  -webkit-text-fill-color: azure;
+  color: azure;
+  -webkit-text-stroke: 1px #000;
+  text-shadow: 0 0 5px red;
   font-weight: bolder;
   font-size: 2rem;
   -webkit-transition: 1s  ease;
@@ -523,15 +443,6 @@ header img {
 }
 .center .uhi button:focus {
   box-shadow: 0 0 10px #000;
-  -webkit-text-fill-color: azure;
-  color: azure;
-  -webkit-text-stroke: 1px #000;
-  text-shadow: 0 0 5px red;
-}
-.center .uhi button:hover {
-  -webkit-text-fill-color: azure;
-  color: azure;
-  -webkit-text-stroke: 1px #000;
 }
 .center .restOfCenter {
   flex: 1;
