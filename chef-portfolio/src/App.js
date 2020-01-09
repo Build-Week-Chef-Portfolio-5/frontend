@@ -15,6 +15,10 @@ function App() {
   return (
     <Router>
       <div className="App">
+        <Route exact path="/" component={Login} />
+        <Route path="/register" component={Register} />
+        <PrivateRoute path="/chef-portfolio" component={ChefPortfolio} />
+
         <Route exact path="/" render={(props) => <Login setChefId={setChefId} {...props}/>} />
         <Route path="/register" render={(props) => <Register setChefId={setChefId} {...props}/>} />
         <Route path="/all-recipes" component={AllRecipes} /> {/* all recipes for non-logged in users */}

@@ -1,0 +1,23 @@
+.NavBar{
+    padding:15px 0;
+    background-color:white;
+
+}
+
+.NavBar button{
+    right:0px;
+    width:100px;
+    padding:10px;
+    color:white;
+    font:12px Poppins, sans-serif;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    border:0px;
+    border-radius:4px;
+    background-color:#FFB284;
+}
+
+.NavBar a{
+    text-decoration:none;
+    color:white;
+}
