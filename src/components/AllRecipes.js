@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import AllRecipeNav from "./AllRecipeNav";
 
 const AllRecipes = () => {
   const [posts, setPosts] = useState([]);
@@ -18,6 +19,7 @@ const AllRecipes = () => {
 
   return (
     <>
+      <AllRecipeNav/>
       <h1>Welcome to your Chef Portfolio</h1>
       <div>
         {posts.map(recipe => (
