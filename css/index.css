@@ -47,12 +47,12 @@ body {
   -webkit-text-fill-color: azure;
   color: azure;
   -webkit-text-stroke: 1px #000;
-  text-shadow: 0 0 5px red;
+  text-shadow: 0 0 5px #ffb284;
   cursor: pointer;
 }
 .register em {
   text-shadow: 0 0 5px #000;
-  -webkit-text-stroke: 0.5px red;
+  -webkit-text-stroke: 0.5px #ffb284;
   color: azure;
   -webkit-text-fill-color: #000;
 }
@@ -360,7 +360,7 @@ header nav a:hover,
 header nav a:focus {
   -webkit-text-stroke: 0.5px #1e214e;
   text-decoration-color: #ffb284;
-  text-shadow: 0 0 20px azure;
+  text-shadow: 0 0 20px #ffb284;
 }
 header img {
   -webkit-animation: shwifty 2s linear infinite;
@@ -429,7 +429,7 @@ header img {
   -webkit-text-fill-color: azure;
   color: azure;
   -webkit-text-stroke: 1px #000;
-  text-shadow: 0 0 5px red;
+  text-shadow: 0 0 5px #ffb284;
   font-weight: bolder;
   font-size: 2rem;
   -webkit-transition: 1s  ease;
