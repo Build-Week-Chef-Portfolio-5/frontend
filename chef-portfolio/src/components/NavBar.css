@@ -1,6 +1,7 @@
 .NavBar{
-    background-color:white;
     padding:15px 0;
+    background-color:white;
+
 }
 
 .NavBar button{
@@ -13,7 +14,7 @@
     text-transform:uppercase;
     border:0px;
     border-radius:4px;
-    background-color:#C6C09C;
+    background-color:#FFB284;
 }
 
 .NavBar a{
