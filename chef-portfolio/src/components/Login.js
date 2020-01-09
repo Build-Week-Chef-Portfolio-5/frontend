@@ -4,7 +4,6 @@ import axios from "axios";
 import Sidebar from "../img/chef.jpg";
 import "./Login.css";
 
-
 const initialState = {
   username: "",
   password: "",
@@ -20,15 +19,14 @@ const Login = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // setInputValues({ ...inputValues, isFetching: true });
     delete inputValues.isFetching;
     axios
       .post("https://chefposts.herokuapp.com/api/chefs/login", inputValues)
       .then(res => {
-        console.log(res)
+        console.log(res);
         localStorage.setItem("token", res.data.token);
-        props.setChefId(res.data.id)
-        localStorage.setItem("id", res.data.id)
+        props.setChefId(res.data.id);
+        localStorage.setItem("id", res.data.id);
         props.history.push("/chef-portfolio"); // this is the name of the page that it will "push" to after a user logs in with correct credentials
       })
       .catch(err =>
@@ -39,7 +37,7 @@ const Login = props => {
   return (
     <div>
       <div className="Login">
-        <img src={Sidebar}/>
+        <img src={Sidebar} />
         <div className="box">
           <h1>Login to continue</h1>
           <form onSubmit={handleSubmit}>
@@ -60,13 +58,12 @@ const Login = props => {
             <button type="submit">Login</button>
             {inputValues.isFetching && "...Logging You In"}{" "}
             {/* optional loading state */}
-        </form>
+          </form>
 
-        <div className="link">
-          Don't have an account? 
-          <Link to="/register">Register here.</Link>
-        </div>
-
+          <div className="link">
+            Don't have an account?
+            <Link to="/register">Register here.</Link>
+          </div>
         </div>
       </div>
     </div>
