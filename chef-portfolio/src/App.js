@@ -7,55 +7,24 @@ import PrivateRoute from "./components/PrivateRoute";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import ChefPortfolio from "./components/ChefPortfolio";
-import NavBar from "./components/NavBar";
+import AllRecipes from "./components/AllRecipes";
 
 function App() {
-  // const [user, setUser] = useState({ email: "", password: ""});
-
-  // const handleChange = event => {
-  //   setUser({ ...user, [event.target.name]: event.target.value });
-  // };
-
-  // const handleSubmit = event => {
-  //   event.preventDefault();
-  //   console.log(user.email);
-  //   console.log(user.password);
-  // }
+  const [chefId, setChefId] = useState(null);
 
   return (
     <Router>
       <div className="App">
-        <NavBar/>
         <Route exact path="/" component={Login} />
         <Route path="/register" component={Register} />
         <PrivateRoute path="/chef-portfolio" component={ChefPortfolio} />
+
+        <Route exact path="/" render={(props) => <Login setChefId={setChefId} {...props}/>} />
+        <Route path="/register" render={(props) => <Register setChefId={setChefId} {...props}/>} />
+        <Route path="/all-recipes" component={AllRecipes} /> {/* all recipes for non-logged in users */}
+        <PrivateRoute path="/chef-portfolio" component={(props) => <ChefPortfolio chefId={chefId} {...props}/>}  />
       </div>
     </Router>
-    // <div className="App">
-    //   <form onSubmit={event => handleSubmit(event)}>
-    //     <label>
-    //       Email:
-    //       <input
-    //         type="text"
-    //         name="email"
-    //         value={user.email}
-    //         onChange={event => handleChange(event)}
-    //       />
-    //     </label>
-
-    //     <label>
-    //       Password:
-    //       <input
-    //         type="text"
-    //         name="password"
-    //         value={user.password}
-    //         onChange={event => handleChange(event)}
-    //       />
-    //     </label>
-
-    //     <button>Submit</button>
-    //   </form>
-    // </div>
   );
 }
 
