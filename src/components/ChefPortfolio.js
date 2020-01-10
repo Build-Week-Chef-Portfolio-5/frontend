@@ -2,6 +2,33 @@ import React, { useState, useEffect } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import AddRecipe from "./AddRecipe";
 import NavBar from "./NavBar";
+import styled from "styled-components";
+
+const TextInput = styled.input`
+  margin: 1% 1%;
+  height: 40px;
+  width: 15%;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 0 2%;
+  border: 2px solid lightgrey;
+`;
+
+const ButtonStyle = styled.button`
+  width: 8%;
+  height: 35px;
+  margin: 5px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #ffb284;
+  color: #fff;
+  margin-top: 1%;
+  font: 15px Poppins, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+`;
 
 const initialRecipe = {
   id: null,
@@ -40,7 +67,7 @@ const ChefPortfolio = props => {
   };
 
   const saveEdit = e => {
-    e.preventDefault()
+    e.preventDefault();
     const {
       image_url,
       title,
@@ -71,54 +98,68 @@ const ChefPortfolio = props => {
         console.log(res);
         document.location.reload(true);
       })
-      .catch(err => console.log("sorry, could not delete recipe", err.response));
+      .catch(err =>
+        console.log("sorry, could not delete recipe", err.response)
+      );
   };
 
   return (
     <>
       <NavBar />
-      <h1>Welcome to your Chef Portfolio</h1>
+      <h1 className="title">
+        Chef portfolio{" "}
+        <span role="img" aria-label="chef">
+          👨🏻‍🍳
+        </span>
+      </h1>
       <AddRecipe />
       <div>
         {posts.map(recipe => (
           <div key={recipe.id} className="recipes">
-            <p>{recipe.name}</p>
-            <p>{recipe.image_url}</p>
-            <p>{recipe.title}</p>
-            <p>{recipe.meal_type}</p>
-            <p>{recipe.ingredients}</p>
-            <p>{recipe.instructions}</p>
-            <button onClick={() => editRecipe(recipe)}>Edit</button>
-            <button onClick={() => deleteRecipe(recipe)}>Delete</button>
+            <p className="recipe-input">Your Name: {recipe.name}</p>
+            <p className="recipe-input">URL: {recipe.image_url}</p>
+            <p className="recipe-input">Title: {recipe.title}</p>
+            <p className="recipe-input">Meal Type: {recipe.meal_type}</p>
+            <p className="recipe-input">Ingredients: {recipe.ingredients}</p>
+            <p className="recipe-input">Instructions: {recipe.instructions}</p>
+            <ButtonStyle onClick={() => editRecipe(recipe)}>Edit</ButtonStyle>
+            <ButtonStyle onClick={() => deleteRecipe(recipe)}>
+              Delete
+            </ButtonStyle>
             <hr />
           </div>
         ))}
 
         {edit && (
           <form onSubmit={saveEdit}>
-            <h3>Edit Recipe</h3>
-            <input
+            <h3 className="edit-title">
+              Edit Recipe{" "}
+              <span role="img" aria-lable="downward pointing finger">
+                👇
+              </span>
+            </h3>
+            <TextInput
               onChange={e =>
                 setRecipeToEdit({ ...recipeToEdit, image_url: e.target.value })
               }
               value={recipeToEdit.image_url}
             />
 
-            <input
+            <TextInput
               onChange={e =>
                 setRecipeToEdit({ ...recipeToEdit, title: e.target.value })
               }
               value={recipeToEdit.title}
             />
 
-            <input
+            <TextInput
               onChange={e =>
                 setRecipeToEdit({ ...recipeToEdit, meal_type: e.target.value })
               }
               value={recipeToEdit.meal_type}
             />
 
-            <input
+            <TextInput
               onChange={e =>
                 setRecipeToEdit({
                   ...recipeToEdit,
@@ -128,7 +169,7 @@ const ChefPortfolio = props => {
               value={recipeToEdit.ingredients}
             />
 
-            <input
+            <TextInput
               onChange={e =>
                 setRecipeToEdit({
                   ...recipeToEdit,
@@ -137,8 +178,8 @@ const ChefPortfolio = props => {
               }
               value={recipeToEdit.instructions}
             />
-            <button type="submit">save</button>
-            <button onClick={() => setEdit(false)}>cancel</button>
+            <ButtonStyle type="submit">save</ButtonStyle>
+            <ButtonStyle onClick={() => setEdit(false)}>cancel</ButtonStyle>
           </form>
         )}
       </div>

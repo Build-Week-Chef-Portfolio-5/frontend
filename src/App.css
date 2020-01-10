@@ -37,3 +37,20 @@
   }
 }
 
+.title {
+  color: #FFC98B;
+  font: 28px Poppins, sans-serif;
+  letter-spacing:0.5px;
+  text-transform: uppercase;
+}
+
+.edit-title {
+  color: #E79796;
+  font: 20px Poppins, sans-serif;
+  text-transform: uppercase;
+}
+
+.recipe-input {
+  font: 17px Poppins, sans-serif;
+}
+

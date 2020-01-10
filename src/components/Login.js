@@ -37,7 +37,7 @@ const Login = props => {
 
   return (
     <div>
-       <HomeNav />
+      <HomeNav />
       <div className="Login">
         <img src={Sidebar} />
         <div className="box">

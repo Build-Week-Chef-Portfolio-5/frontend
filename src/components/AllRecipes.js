@@ -19,18 +19,22 @@ const AllRecipes = () => {
 
   return (
     <>
-      <AllRecipeNav/>
-      <h1>Welcome to your Chef Portfolio</h1>
+      <AllRecipeNav />
+      <h1 className="title">
+        Chef's Recipes{" "}
+        <span role="img" aria-label="chef">
+          👨🏻‍🍳
+        </span>
+      </h1>
       <div>
         {posts.map(recipe => (
           <div key={recipe.id} className="recipes">
-            <p>{recipe.name}</p>
-            <p>{recipe.image_url}</p>
-            <p>{recipe.title}</p>
-            <p>{recipe.meal_type}</p>
-            <p>{recipe.ingredients}</p>
-            <p>{recipe.instructions}</p>
-            <p>{recipe.chef_id}</p>
+            <p className="recipe-input">Chef's Name: {recipe.name}</p>
+            <p className="recipe-input">URL: {recipe.image_url}</p>
+            <p className="recipe-input">Title: {recipe.title}</p>
+            <p className="recipe-input">Meal Type: {recipe.meal_type}</p>
+            <p className="recipe-input">Ingredients: {recipe.ingredients}</p>
+            <p className="recipe-input">Instructions: {recipe.instructions}</p>
             <hr />
           </div>
         ))}

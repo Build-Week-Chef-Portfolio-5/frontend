@@ -1,5 +1,32 @@
 import React, { useState } from "react";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
+import styled from "styled-components";
+
+const TextInput = styled.input`
+  margin: 1% 1%;
+  height: 40px;
+  width: 15%;
+  border-radius: 5px;
+  font-size: 1rem;
+  padding: 0 2%;
+  border: 2px solid lightgrey;
+`;
+
+const ButtonStyle = styled.button`
+  width: 15%;
+  height: 45px;
+  margin: auto;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #ffb284;
+  color: #fff;
+  margin-top: 1%;
+  font: 15px Poppins, sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+`;
 
 const initialState = {
   id: Date.now(),
@@ -39,13 +66,14 @@ const AddRecipe = props => {
         console.log(res.data);
         setAddRecipe(res.data);
       })
-      .catch(err => console.log("sorry, can not add a new recipe", err.response));
+      .catch(err =>
+        console.log("sorry, can not add a new recipe", err.response)
+      );
   };
 
   return (
     <form onSubmit={onSubmit}>
-      <h3>Add Recipe</h3>
-      <input
+      <TextInput
         type="text"
         name="image_url"
         value={addRecipe.image_url}
@@ -53,7 +81,7 @@ const AddRecipe = props => {
         onChange={handleChange}
         required
       />
-      <input
+      <TextInput
         type="text"
         name="title"
         value={addRecipe.title}
@@ -62,7 +90,7 @@ const AddRecipe = props => {
         required
       />
 
-      <input
+      <TextInput
         type="text"
         name="meal_type"
         value={addRecipe.meal_type}
@@ -71,7 +99,7 @@ const AddRecipe = props => {
         required
       />
 
-      <input
+      <TextInput
         type="text"
         name="ingredients"
         value={addRecipe.ingredients}
@@ -80,7 +108,7 @@ const AddRecipe = props => {
         required
       />
 
-      <input
+      <TextInput
         type="text"
         name="instructions"
         value={addRecipe.instructions}
@@ -89,7 +117,7 @@ const AddRecipe = props => {
         required
       />
 
-      <button type="submit">Add Recipe</button>
+      <ButtonStyle type="submit">Add Recipe</ButtonStyle>
     </form>
   );
 };
